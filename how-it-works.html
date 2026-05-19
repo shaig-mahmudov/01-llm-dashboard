@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How LLMs Work</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>How LLMs Work</h1>
+    <p>A simple step-by-step timeline showing how a Large Language Model processes a prompt.</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Dashboard</a>
+    <a href="index.html#comparison">Comparison</a>
+    <a href="index.html#model-cards">Model Cards</a>
+    <a href="#timeline">Timeline</a>
+  </nav>
+
+  <main>
+    <section id="timeline">
+      <h2>How an LLM Processes a Prompt</h2>
+
+      <ol class="timeline">
+        <li class="timeline-step">
+          <div class="step-marker">1</div>
+          <div class="step-content">
+            <h3>User Input</h3>
+            <p>The user types a prompt into the interface. This can be a question, command, code request, or long document.</p>
+          </div>
+        </li>
+
+        <li class="timeline-step">
+          <div class="step-marker">2</div>
+          <div class="step-content">
+            <h3>Tokenisation</h3>
+            <p>The prompt is split into smaller pieces called tokens. These tokens are the units the model can process.</p>
+          </div>
+        </li>
+
+        <li class="timeline-step">
+          <div class="step-marker">3</div>
+          <div class="step-content">
+            <h3>Embedding</h3>
+            <p>Each token is converted into a numerical representation, so the model can work with meaning and relationships mathematically.</p>
+          </div>
+        </li>
+
+        <li class="timeline-step">
+          <div class="step-marker">4</div>
+          <div class="step-content">
+            <h3>Attention Layers</h3>
+            <p>The model uses attention layers to understand which tokens are most important in relation to each other.</p>
+          </div>
+        </li>
+
+        <li class="timeline-step">
+          <div class="step-marker">5</div>
+          <div class="step-content">
+            <h3>Prediction</h3>
+            <p>The model predicts the most likely next token based on the prompt, context, and learned patterns from training.</p>
+          </div>
+        </li>
+
+        <li class="timeline-step">
+          <div class="step-marker">6</div>
+          <div class="step-content">
+            <h3>Output Generation</h3>
+            <p>The model repeats the prediction process many times until it generates a complete response for the user.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <p>LLM Dashboard mini-site. Built with semantic HTML and CSS.</p>
+  </footer>
+</body>
+</html>

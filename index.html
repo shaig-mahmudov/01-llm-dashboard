@@ -4,82 +4,62 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LLM Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
   <header>
     <h1>LLM Dashboard</h1>
-    <p>A simple HTML dashboard for understanding and comparing Large Language Models.</p>
+    <p>A simple dashboard for understanding and comparing Large Language Models.</p>
   </header>
 
   <nav>
-    <ul>
-      <li><a href="#what-is-llm">What is an LLM?</a></li>
-      <li><a href="#what-is-token">What is a Token?</a></li>
-      <li><a href="#comparison">LLM Comparison</a></li>
-    </ul>
+    <a href="#what-is-llm">What is an LLM?</a>
+    <a href="#what-is-token">Tokens</a>
+    <a href="#comparison">Comparison</a>
+    <a href="#model-cards">Model Cards</a>
+    <a href="how-it-works.html">How It Works</a>
   </nav>
 
   <main>
-
     <section id="what-is-llm">
       <h2>What is an LLM?</h2>
-
       <p>
-        LLM stands for Large Language Model. An LLM is an artificial intelligence model
-        trained to understand, generate, summarize, translate, and reason about human language.
+        LLM stands for Large Language Model. It is an artificial intelligence model trained to understand,
+        generate, summarize, translate, and reason about human language.
       </p>
-
       <p>
-        LLMs are trained on very large datasets that may include books, websites, code,
-        articles, conversations, and other text-based resources. During training, the model
-        learns patterns in language and becomes good at predicting the next token in a sequence.
+        LLMs are trained on very large datasets such as books, websites, code, articles, documentation,
+        and conversations. During training, the model learns language patterns and becomes good at predicting
+        the next token in a sequence.
       </p>
-
       <p>
-        For example, if the input is "The sky is", the model may predict that the next likely
-        word or token is "blue". By repeating this process many times, LLMs can generate
-        complete answers, explanations, code, and structured content.
-      </p>
-
-      <p>
-        Real-world examples of LLMs include GPT-5.5 by OpenAI, Claude Sonnet 4.6 by Anthropic,
-        and Gemini 3.1 Pro by Google.
+        For example, if the input is <strong>"The sky is"</strong>, the model may predict that the next likely
+        word is <strong>"blue"</strong>. Real-world examples of LLMs include GPT-5.5 by OpenAI,
+        Claude Sonnet 4.6 by Anthropic, and Gemini 3.1 Pro by Google.
       </p>
     </section>
 
     <section id="what-is-token">
       <h2>What is a Token?</h2>
-
       <p>
-        A token is a small chunk of text that an LLM uses to read and generate language.
-        A token can be a full word, part of a word, punctuation mark, number, or symbol.
-        On average, one token is roughly 3-4 characters or about three quarters of an English word.
+        A token is a small chunk of text that an LLM uses to read and generate language. A token can be a full
+        word, part of a word, punctuation mark, number, or symbol. On average, one token is roughly 3-4 characters
+        or about three quarters of an English word.
       </p>
-
       <p>
-        Tokens matter because LLM providers use them to measure context windows and pricing.
-        The context window shows how much text the model can process in one request.
-        Pricing is also usually calculated by the number of input and output tokens.
+        Tokens matter because LLM providers use them to measure context windows and pricing. The context window
+        shows how much text the model can process in one request. Pricing is also usually calculated based on
+        input and output tokens.
       </p>
-
       <p>
-        For example, the sentence "Hello, world!" might be split into tokens like
-        "Hello", ",", " world", and "!". The exact split depends on the tokenizer used
-        by the model.
+        For example, the sentence <strong>"Hello, world!"</strong> might be split into tokens like
+        <strong>"Hello"</strong>, <strong>","</strong>, <strong>" world"</strong>, and <strong>"!"</strong>.
+        The exact split depends on the tokenizer used by the model.
       </p>
-
       <p>
-        English and Azerbaijani can consume tokens differently. English words are common in
-        many training datasets and are often tokenized efficiently. Azerbaijani words may use
-        suffixes and forms that can sometimes be split into more tokens. For example, an
-        Azerbaijani word like "evlərimizdən" may be divided into several smaller pieces,
-        while a common English word may use fewer tokens.
-      </p>
-
-      <p>
-        This means that the same idea written in Azerbaijani may sometimes use more tokens
-        than the English version, depending on the exact words and the model tokenizer.
+        English and Azerbaijani can consume tokens differently. English words are often tokenized efficiently,
+        while Azerbaijani words may include suffixes and forms that are split into more tokens. For example,
+        a word like <strong>"evlərimizdən"</strong> may be divided into several smaller pieces.
       </p>
     </section>
 
@@ -96,8 +76,8 @@
             <th>Model</th>
             <th>Provider</th>
             <th>Context Window</th>
-            <th>Input Price (per 1M tokens)</th>
-            <th>Output Price (per 1M tokens)</th>
+            <th>Input Price <span>(per 1M tokens)</span></th>
+            <th>Output Price <span>(per 1M tokens)</span></th>
             <th>Reasoning</th>
           </tr>
         </thead>
@@ -109,80 +89,126 @@
             <td>1M</td>
             <td>$5.00</td>
             <td>$30.00</td>
-            <td>✓</td>
+            <td class="reasoning-symbol reasoning-yes-symbol">✓</td>
           </tr>
-
           <tr>
             <td>GPT-5.4</td>
             <td>OpenAI</td>
             <td>1M</td>
             <td>$2.50</td>
             <td>$15.00</td>
-            <td>✓</td>
+            <td class="reasoning-symbol reasoning-yes-symbol">✓</td>
           </tr>
-
           <tr>
             <td>GPT-5.4 mini</td>
             <td>OpenAI</td>
             <td>400K</td>
             <td>$0.75</td>
             <td>$4.50</td>
-            <td>✓</td>
+            <td class="reasoning-symbol reasoning-yes-symbol">✓</td>
           </tr>
-
           <tr>
             <td>Claude Sonnet 4.6</td>
             <td>Anthropic</td>
             <td>1M</td>
             <td>$3.00</td>
             <td>$15.00</td>
-            <td>✓</td>
+            <td class="reasoning-symbol reasoning-yes-symbol">✓</td>
           </tr>
-
           <tr>
             <td>Gemini 3.1 Pro Preview</td>
             <td>Google</td>
             <td>1M</td>
             <td>$2.00</td>
-            <td>$12.00</td>
-            <td>✓</td>
+            <td>$9.00</td>
+            <td class="reasoning-symbol reasoning-yes-symbol">✓</td>
           </tr>
         </tbody>
       </table>
     </section>
 
+    <section id="model-cards">
+      <h2>Model Cards</h2>
+
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-header">
+            <span class="card-provider">OpenAI</span>
+            <span class="card-reasoning reasoning-yes">Reasoning</span>
+          </div>
+          <h3 class="card-name">GPT-5.5</h3>
+          <p class="card-tagline">Best for complex reasoning, professional analysis, coding, and long-context work.</p>
+          <ul class="card-specs">
+            <li><span class="spec-label">Context</span><span class="spec-value">1M</span></li>
+            <li><span class="spec-label">Input</span><span class="spec-value">$5 / 1M</span></li>
+            <li><span class="spec-label">Output</span><span class="spec-value">$30 / 1M</span></li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <span class="card-provider">OpenAI</span>
+            <span class="card-reasoning reasoning-yes">Reasoning</span>
+          </div>
+          <h3 class="card-name">GPT-5.4</h3>
+          <p class="card-tagline">Best for balanced reasoning quality and lower cost than the flagship model.</p>
+          <ul class="card-specs">
+            <li><span class="spec-label">Context</span><span class="spec-value">1M</span></li>
+            <li><span class="spec-label">Input</span><span class="spec-value">$2.50 / 1M</span></li>
+            <li><span class="spec-label">Output</span><span class="spec-value">$15 / 1M</span></li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <span class="card-provider">OpenAI</span>
+            <span class="card-reasoning reasoning-yes">Reasoning</span>
+          </div>
+          <h3 class="card-name">GPT-5.4 mini</h3>
+          <p class="card-tagline">Best for cheaper apps that still need strong reasoning and fast responses.</p>
+          <ul class="card-specs">
+            <li><span class="spec-label">Context</span><span class="spec-value">400K</span></li>
+            <li><span class="spec-label">Input</span><span class="spec-value">$0.75 / 1M</span></li>
+            <li><span class="spec-label">Output</span><span class="spec-value">$4.50 / 1M</span></li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <span class="card-provider">Anthropic</span>
+            <span class="card-reasoning reasoning-yes">Reasoning</span>
+          </div>
+          <h3 class="card-name">Claude Sonnet 4.6</h3>
+          <p class="card-tagline">Best for coding, long documents, careful writing, and instruction-following tasks.</p>
+          <ul class="card-specs">
+            <li><span class="spec-label">Context</span><span class="spec-value">1M</span></li>
+            <li><span class="spec-label">Input</span><span class="spec-value">$3 / 1M</span></li>
+            <li><span class="spec-label">Output</span><span class="spec-value">$15 / 1M</span></li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <span class="card-provider">Google</span>
+            <span class="card-reasoning reasoning-yes">Reasoning</span>
+          </div>
+          <h3 class="card-name">Gemini 3.1 Pro Preview</h3>
+          <p class="card-tagline">Best for multimodal reasoning, large context tasks, and Google ecosystem workflows.</p>
+          <ul class="card-specs">
+            <li><span class="spec-label">Context</span><span class="spec-value">1M</span></li>
+            <li><span class="spec-label">Input</span><span class="spec-value">$2 / 1M</span></li>
+            <li><span class="spec-label">Output</span><span class="spec-value">$9 / 1M</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer>
-    <h2>Sources</h2>
-
-    <ul>
-      <li>
-        <a href="https://developers.openai.com/api/docs/models" target="_blank">
-          OpenAI API Models Documentation
-        </a>
-      </li>
-      <li>
-        <a href="https://www.anthropic.com/news/claude-sonnet-4-6" target="_blank">
-          Anthropic Claude Sonnet 4.6 Announcement
-        </a>
-      </li>
-      <li>
-        <a href="https://ai.google.dev/gemini-api/docs/pricing" target="_blank">
-          Google Gemini API Pricing
-        </a>
-      </li>
-      <li>
-        <a href="https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/3-1-pro" target="_blank">
-          Google Gemini 3.1 Pro Documentation
-        </a>
-      </li>
-    </ul>
-
     <p>
-      Prices and context windows may change over time. This table should be updated when providers change their official documentation.
+      Sources: OpenAI API documentation, Anthropic Claude announcements, and Google Gemini API pricing.
+      Prices and context windows may change over time.
     </p>
   </footer>
-
 </body>
 </html>
